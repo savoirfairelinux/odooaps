@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_microservice" model="ir.actions.act_window">
+        <field name="name">Microservice</field>
+        <field name="res_model">microservice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="microservice_root"
+              name="Microservice"
+              />
+    <menuitem id="microservice_menu"
+              name="Microservice"
+              parent="microservice_root"
+              action="action_microservice"
+              />
+
+    <record id="microservice_tree" model="ir.ui.view">
+        <field name="name">microservice Tree</field>
+        <field name="model">microservice</field>
+        <field name="arch" type="xml">
+            <tree string="microservice">
+                <field name="name"/>
+                <field name="url"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="microservice_form" model="ir.ui.view">
+        <field name="name">Microservice Form</field>
+        <field name="model">microservice</field>
+        <field name="arch" type="xml">
+            <form string="Microservice">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="url"/>
+                        <field name="request"/>
+                        <button type="object" name="get_microservice" string="GET"/>
+                        <button type="object" name="post_microservice" string="POST"/>
+                    </group>
+                    <notebook>
+                    <page string="Result">
+                        <group>
+                            <field name="result" style="width:500px;height:500px"/>
+                        </group>
+                    </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
