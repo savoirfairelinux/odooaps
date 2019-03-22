@@ -1,2 +1,2 @@
-# odoo-aps-service
-Simple service using flask, mongo and docker
+# Odoo APS Service
+Odoo module with it's external APS service
