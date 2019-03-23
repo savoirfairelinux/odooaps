@@ -62,6 +62,7 @@ services:
       - db_web
       - smtp
       - debug
+      - flask-app
     environment:
       - PGHOST=db
       - USER=odoodev
