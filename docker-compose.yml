@@ -1,9 +1,9 @@
 version: '3'
 services:
-  flask-app:
-    build: ./flask-app
+  aps-service:
+    build: ./aps-service
     volumes:
-      - ./flask-app:/usr/src/app
+      - ./aps-service:/usr/src/app
     ports:
       - 5000:5000
     depends_on:
@@ -62,7 +62,7 @@ services:
       - db_web
       - smtp
       - debug
-      - flask-app
+      - aps-service
     environment:
       - PGHOST=db
       - USER=odoodev
